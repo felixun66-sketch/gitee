@@ -11,7 +11,7 @@ export async function onRequest(context) {
 
   // Proxy to https://ai.gitee.com/v1/<path...>
   const path = (params.path || []).join("/");
-  const targetUrl = new URL(`https://ai.gitee.com/serverless-api/v1/${path}`);
+  const targetUrl = new URL(`https://ai.gitee.com/v1/${path}`);
   const reqUrl = new URL(request.url);
   // forward query string
   targetUrl.search = reqUrl.search;
